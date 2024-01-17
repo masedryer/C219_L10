@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Covid-19 in Singapore</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/tippy.js@6.3.3/dist/tippy.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.2/fullpage.min.css"
+    />
+
+    " />
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.2/fullpage.min.css"
+    />
+
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/tippy.js@6.3.3/dist/tippy-bundle.umd.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.2/fullpage.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.0/anime.min.js"></script>
+  </head>
+
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
+      <div class="container-fluid">
+        <!-- Homepage Title -->
+        <a class="navbar-brand" href="#"><i class="fa-solid fa-virus-covid" id="covid"></i>Covid-19 in Singapore</a>
+
+        <!-- Navbar Toggler -->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Navbar Items -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#section1">Cases</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#section2">Vaccination Progress</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#section3">Vaccination Centres</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- FullPage.js Sections -->
+    <div id="fullpage">
+      <!-- Section 1 -->
+      <div class="section" id="section1">
+        <div class="section-content container">
+          <div class="row">
+            <!-- Left side -->
+            <div class="col-md-6">
+              <div class="left-side">
+                <h1>Covid-19 Cases in Singapore</h1>
+                <div class="row">
+                  <div class="col-md-4">
+                    <p>Total cases: <span id="cases">257510</span></p>
+                  </div>
+                  <div class="col-md-4">
+                    <p>
+                      Currently in hospital: <br /><span id="hospital"
+                        >1365</span
+                      >
+                    </p>
+                  </div>
+                  <div class="col-md-4">
+                    <p>Total deaths: <br /><span id="deaths">678</span></p>
+                  </div>
+                </div>
+
+                <p>
+                  The number of Covid-19 cases in Singapore has grown to 257510,
+                  with 2079 new cases reported on 31 Dec. Of these, 2030 were
+                  reported in the community and 40 in the workers’ dormitories.
+                  The remaining nine cases were imported. A further 2275
+                  patients were discharged, including 366 seniors aged above 60.
+                  A total of 238909 cases have recovered to date.
+                </p>
+              </div>
+            </div>
+
+            <!-- Right side -->
+            <div class="col-md-6">
+              <div class="right-side">
+                <canvas id="dailyCasesChart" width="800" height="600"></canvas>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 2 -->
+      <div class="section" id="section2">
+        <div class="section-content container">
+          <div class="row">
+            <!-- Right side -->
+            <div class="col-md-6">
+              <div class="right-side">
+                <h3>9 out of 10 Singaporeans have been vaccinated</h3>
+                <div class="icon-container">
+                  <!-- Display 10 human icons -->
+                  <object
+                    class="human-icon"
+                    type="image/svg+xml"
+                    data="man.svg"
+                    width="100"
+                    height="300"
+                  ></object>
+                  <object
+                    class="human-icon"
+                    type="image/svg+xml"
+                    data="man.svg"
+                    width="100"
+                    height="300"
+                  ></object>
+                  <object
+                    class="human-icon"
+                    type="image/svg+xml"
+                    data="man.svg"
+                    width="100"
+                    height="300"
+                  ></object>
+                  <object
+                    class="human-icon"
+                    type="image/svg+xml"
+                    data="man.svg"
+                    width="100"
+                    height="300"
+                  ></object>
+
+                  <object
+                    class="human-icon"
+                    type="image/svg+xml"
+                    data="man.svg"
+                    width="100"
+                    height="300"
+                  ></object>
+                  <object
+                    class="human-icon"
+                    type="image/svg+xml"
+                    data="man.svg"
+                    width="100"
+                    height="300"
+                  ></object>
+                  <object
+                    class="human-icon"
+                    type="image/svg+xml"
+                    data="man.svg"
+                    width="100"
+                    height="300"
+                  ></object>
+                  <object
+                    class="human-icon"
+                    type="image/svg+xml"
+                    data="man.svg"
+                    width="100"
+                    height="300"
+                  ></object>
+                  <object
+                    class="human-icon"
+                    type="image/svg+xml"
+                    data="man.svg"
+                    width="100"
+                    height="300"
+                  ></object>
+                  <object
+                    class="human-icon anomaly"
+                    type="image/svg+xml"
+                    data="man-anomaly.svg"
+                    width="100"
+                    height="300"
+                  ></object>
+                </div>
+              </div>
+            </div>
+
+            <!-- Left side -->
+            <div class="col-md-6">
+              <div class="left-side">
+                <h1>Vaccination Progress</h1>
+                <p>
+                  For every 100 people in Singapore, 88 have received their
+                  first dose, and 87 are fully vaccinated as of 14 Dec.
+                </p>
+                <p>
+                  In addition, the Health Ministry reported that as of 14 Dec,
+                  96 percent of the eligible population (aged 12 years and
+                  above) have completed their full regime, or received two doses
+                  of Covid-19 vaccines. With new Covid-19 variants such as
+                  Omicron surfacing, full vaccination will have to include
+                  booster shots as well.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section" id="section3">
+        <div class="container">
+          <div class="row">
+            <h1 id="vc">Vaccination Centres in Singapore</h1>
+            <div class="col-md-6">
+              <!-- Map with locations and tooltips -->
+              <div class="map-container">
+                <img
+                  src="singapore.svg"
+                  alt="Singapore Map"
+                  class="map-image"
+                  id="vaccineMap"
+                />
+
+                <div id="bbHotspot">
+                  <i class="fa-solid fa-location-dot" class="location-dot"></i>
+                </div>
+                <div id="bedokHotspot">
+                  <i class="fa-solid fa-location-dot" class="location-dot"></i>
+                </div>
+                <div id="bmHotspot">
+                  <i class="fa-solid fa-location-dot" class="location-dot"></i>
+                </div>
+                <div id="cckHotspot">
+                  <i class="fa-solid fa-location-dot" class="location-dot"></i>
+                </div>
+                <div id="clHotspot">
+                  <i class="fa-solid fa-location-dot" class="location-dot"></i>
+                </div>
+                <div id="hgHotspot">
+                  <i class="fa-solid fa-location-dot" class="location-dot"></i>
+                </div>
+                <div id="jrgHotspot">
+                  <i class="fa-solid fa-location-dot" class="location-dot"></i>
+                </div>
+                <div id="mpHotspot">
+                  <i class="fa-solid fa-location-dot" class="location-dot"></i>
+                </div>
+                <div id="outHotspot">
+                  <i class="fa-solid fa-location-dot" class="location-dot"></i>
+                </div>
+                <div id="prHotspot">
+                  <i class="fa-solid fa-location-dot" class="location-dot"></i>
+                </div>
+                <div id="pioneerHotspot">
+                  <i class="fa-solid fa-location-dot" class="location-dot"></i>
+                </div>
+                <!-- Add more tooltips as needed -->
+              </div>
+            </div>
+
+            <!-- Section 3 Right (Table) -->
+            <div class="col-md-6">
+              <!-- Vaccination Centres Table -->
+              <table class="table" id="vaccineCentres">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Address</th>
+                    <th>Vaccine Type</th>
+                    <th>Phone</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <!-- Table content will be generated dynamically by DataTables -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Include other JS files and libraries as needed -->
+
+      <!-- External JavaScript files -->
+      <script src="fullpage-config.js"></script>
+      <script src="chart-config.js"></script>
+
+      <script src="script.js"></script>
+    </div>
+  </body>
+</html>

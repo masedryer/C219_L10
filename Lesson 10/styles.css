@@ -1,0 +1,194 @@
+/* Custom styles for the page */
+body {
+  background-color: #f8f9fa; /* Light gray background */
+  color: #495057; /* Dark gray text color */
+}
+
+.container {
+  margin-top: 50px; /* Add space between the Navbar and content */
+}
+
+.section-content {
+  padding: 20px; /* Add padding to the section content */
+}
+
+.navbar {
+  background-color: #343a40; /* Dark background for the Navbar */
+}
+
+.navbar-brand {
+  font-weight: bold;
+  margin-left: 50px;
+}
+
+.navbar-nav .nav-link {
+  color: #adb5bd; /* Light gray text color for Navbar links */
+  margin-right: 15px;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #fff; /* White text color on hover */
+}
+
+/* Style the DataTable */
+.table {
+  width: 100%;
+  margin-top: 20px;
+  border-collapse: collapse;
+}
+
+.table th,
+.table td {
+  padding: 10px;
+  border: 1px solid #dee2e6; /* Light gray border */
+}
+
+.table thead th {
+  background-color: #343a40; /* Dark background for table header */
+  color: #fff; /* White text color for table header */
+}
+
+/* Style the Chart */
+#dailyCasesChart {
+  width: 100%;
+  max-width: 600px; /* Adjust max-width as needed */
+  margin: 20px auto; /* Center the chart */
+  display: block;
+}
+
+/* Style the Map SVG */
+#vaccineMap {
+  width: 100%;
+  max-width: 500px; /* Adjust max-width as needed */
+  margin: 20px auto; /* Center the map */
+  display: block;
+}
+#bbHotspot {
+  position: absolute;
+
+  cursor: pointer;
+}
+.navbar-toggler-icon {
+  background-color: black; /* Set navbar toggler color */
+}
+
+.section-content {
+  padding: 20px;
+}
+
+.left-side h1,
+.right-side h3 {
+  color: black; /* Set title color */
+}
+
+.left-side p,
+.right-side p {
+  color: black; /* Set text color */
+}
+/* Increase font size for Section 1 content */
+
+#section1 .left-side p {
+  font-size: 24px; /* Adjust the font size as needed */
+}
+
+#section1 .left-side h1 {
+  font-weight: 500px;
+  font-size: 50px;
+}
+.left-side h1 {
+  font-size: 40px;
+}
+
+.left-side p {
+  font-size: 30px;
+}
+#bbHotspot {
+  top: 280px;
+  right: 1450px;
+  color: red;
+  position: absolute;
+  cursor: pointer;
+}
+
+#bedokHotspot {
+  top: 280px;
+  right: 1200px;
+  position: absolute;
+  color: red;
+  cursor: pointer;
+}
+
+#bmHotspot {
+  top: 290px;
+  right: 1300px;
+  position: absolute;
+  color: red;
+  cursor: pointer;
+}
+
+#cckHotspot {
+  top: 260px;
+  right: 1450px;
+  position: absolute;
+  color: red;
+  cursor: pointer;
+}
+
+#clHotspot {
+  top: 290px;
+  right: 1300px;
+  position: absolute;
+  color: red;
+  cursor: pointer;
+}
+
+#hgHotspot {
+  top: 240px;
+  right: 1300px;
+  position: absolute;
+  color: red;
+  cursor: pointer;
+}
+
+#jrgHotspot {
+  top: 290px;
+  right: 1400px;
+  position: absolute;
+  color: red;
+  cursor: pointer;
+}
+
+#mpHotspot {
+  top: 290px;
+  right: 1150px;
+  position: absolute;
+  color: red;
+  cursor: pointer;
+}
+
+#outHotspot {
+  top: 290px;
+  right: 1150px;
+  position: absolute;
+  color: red;
+  cursor: pointer;
+}
+
+#prHotspot {
+  top: 280px;
+  right: 1110px;
+  position: absolute;
+  color: red;
+  cursor: pointer;
+}
+
+#pioneerHotspot {
+  top: 260px;
+  right: 1500px;
+  position: absolute;
+  color: red;
+  cursor: pointer;
+}
+#covid {
+  color: red;
+}
